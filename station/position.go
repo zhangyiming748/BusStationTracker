@@ -48,6 +48,7 @@ func Positive(station string, direction bool) (constant.Rep, error) {
 	if rep.Code != 200 {
 		return constant.Rep{}, fmt.Errorf("当前站点:%v查询失败:%v", station, rep.Code)
 	}
+	fmt.Println(rep)
 	return constant.Rep{}, nil
 }
 
@@ -77,5 +78,6 @@ func Negative(station string, direction bool) (constant.Rep, error) {
 	if rep.Code != 200 {
 		return constant.Rep{}, fmt.Errorf("当前站点:%v查询失败:%v", station, rep.Code)
 	}
+	fmt.Println(rep)
 	return rep, nil
 }
