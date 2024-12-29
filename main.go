@@ -15,7 +15,21 @@ func main() {
 }
 
 func tally() {
+	var positions = []string{
+		constant.BAJIAOROADEAST,
+		constant.GALAXYSTREET,
+		constant.JINGYUANROADEAST,
+		constant.LAOSHAN,
+		constant.NATIONALBOTANIXALGARDEN,
+		constant.SHIJINGSHANSCULPTUREPARK,
+		constant.SHIJINGSHANTECHNOLOGYMUSEUM,
+		constant.TIMESGARDENNORTH,
+	}
+	for _, position := range positions {
+		station.GetInPosition(position)
+	}
 	reps := []constant.Rep{}
+
 	if position, err := station.GetInPosition(constant.BAJIAOROADEAST); err == nil {
 		reps = append(reps, position...)
 		time.Sleep(1 * time.Second)
