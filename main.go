@@ -62,6 +62,14 @@ func tally() {
 		reps = append(reps, position...)
 		time.Sleep(1 * time.Second)
 	}
+	if position, err := station.GetInPosition(constant.JINGYANHOTEL); err == nil {
+		reps = append(reps, position...)
+		time.Sleep(1 * time.Second)
+	}
+	if position, err := station.GetInPosition(constant.BAJIAO); err == nil {
+		reps = append(reps, position...)
+		time.Sleep(1 * time.Second)
+	}
 	for _, rep := range reps {
 		fmt.Println(rep)
 	}

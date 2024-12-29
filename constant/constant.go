@@ -26,4 +26,6 @@ const (
 	SHIJINGSHANSCULPTUREPARK    = "石景山雕塑公园"
 	SHIJINGSHANTECHNOLOGYMUSEUM = "石景山科技馆"
 	TIMESGARDENNORTH            = "时代花园北路"
+	JINGYANHOTEL                = "京燕饭店"
+	BAJIAO                      = "八角"
 )
