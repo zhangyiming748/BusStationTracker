@@ -18,7 +18,7 @@ type Data []struct {
 }
 
 const (
-	BAJIAOROADEAST              = "八角路西口"
+	BAJIAOROADEAST              = "八角路东口"
 	GALAXYSTREET                = "银河大街"
 	JINGYUANROADEAST            = "京原路口东"
 	LAOSHAN                     = "老山"
