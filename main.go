@@ -3,7 +3,7 @@ package main
 import (
 	"bus/constant"
 	"bus/station"
-	"fmt"
+	"bus/util"
 	"time"
 )
 
@@ -11,6 +11,7 @@ import (
 // the <icon src="AllIcons.Actions.Execute"/> icon in the gutter and select the <b>Run</b> menu item from here.</p>
 
 func main() {
+	util.SetLog("bus.log")
 	tally()
 }
 
@@ -69,8 +70,5 @@ func tally() {
 	if position, err := station.GetInPosition(constant.BAJIAO); err == nil {
 		reps = append(reps, position...)
 		time.Sleep(1 * time.Second)
-	}
-	for _, rep := range reps {
-		fmt.Println(rep)
 	}
 }

@@ -5,6 +5,7 @@ import (
 	"bus/util"
 	"encoding/json"
 	"fmt"
+	"log"
 )
 
 func GetInPosition(station string) ([]constant.Rep, error) {
@@ -48,7 +49,7 @@ func Positive(station string, direction bool) (constant.Rep, error) {
 	if rep.Code != 200 {
 		return constant.Rep{}, fmt.Errorf("当前站点:%v查询失败:%v", station, rep.Code)
 	}
-	fmt.Println(rep)
+	Parse(rep)
 	return constant.Rep{}, nil
 }
 
@@ -78,6 +79,11 @@ func Negative(station string, direction bool) (constant.Rep, error) {
 	if rep.Code != 200 {
 		return constant.Rep{}, fmt.Errorf("当前站点:%v查询失败:%v", station, rep.Code)
 	}
-	fmt.Println(rep)
+	Parse(rep)
 	return rep, nil
+}
+func Parse(rep constant.Rep) {
+	for _, data := range rep.Data {
+		log.Printf("站点名:%s\t线路名:%s\t开往%s\t预计到站时间%s\t预计剩余时间:%s\t预计剩余站数:%s\n", rep.Line, data.Lines, data.EndSn, data.Reachtime, data.TravelTime, data.Surplus)
+	}
 }
